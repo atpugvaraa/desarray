@@ -1,0 +1,43 @@
+name: desarray
+options:
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+packages:
+  DesarrayCore:
+    path: Packages/DesarrayCore
+targets:
+  desarray:
+    type: application
+    platform: macOS
+    sources: [App]
+    dependencies:
+      - package: DesarrayCore
+        product: DesarrayDomain
+      - package: DesarrayCore
+        product: DesarrayGeometry
+      - package: DesarrayCore
+        product: DesarrayAccessibility
+      - package: DesarrayCore
+        product: DesarrayRender
+      - package: DesarrayCore
+        product: DesarrayCapture
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: desarray.
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        LSUIElement: true
+        LSMinimumSystemVersion: "14.0"
+    configFiles:
+      Debug: Config/Base.xcconfig
+      Release: Config/Base.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.desarray.mac
+        PRODUCT_NAME: desarray
+        SWIFT_VERSION: "6.0"
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        CODE_SIGN_STYLE: Manual
+        ENABLE_HARDENED_RUNTIME: NO

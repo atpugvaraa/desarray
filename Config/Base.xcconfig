@@ -1,0 +1,6 @@
+// Ad-hoc signing by default so anyone can build.
+// To keep macOS Accessibility / Screen Recording grants across rebuilds, sign with a stable
+// identity: create Config/Local.xcconfig (git-ignored) containing e.g.
+//   CODE_SIGN_IDENTITY = Apple Development: Your Name (XXXXXXXXXX)
+CODE_SIGN_IDENTITY = -
+#include? "Local.xcconfig"
