@@ -68,7 +68,15 @@ Pixels and accessibility frames can't tell you *why* a designer chose a value, s
 
 The JSON export keeps that on every number (`evidence`, `method`, `limitation`), so the next person, or the next coding agent, knows what's fact and what's estimate.
 
-## Install & build
+## Install
+
+```bash
+brew install --cask atpugvaraa/atpugvaraa/desarray
+```
+
+Or grab `desarray-<version>.zip` from [Releases](https://github.com/atpugvaraa/desarray/releases), unzip, and drag **desarray.app** to Applications. Releases are signed with Developer ID and notarized by Apple.
+
+## Build from source
 
 Requires macOS 14+, Xcode 16+ (developed on Xcode 27) and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
 
@@ -107,6 +115,7 @@ Packages/DesarrayCore/
   DesarrayRender           one CoreGraphics renderer for live overlay, capture window and PNG
   desarray-probe           dev CLI: run the whole pipeline on a screen rect
 docs/DECISIONS.md          decision log, what's verified and what isn't
+docs/RELEASING.md          tag → signed, notarized release + Homebrew cask bump
 ```
 
 ```bash
